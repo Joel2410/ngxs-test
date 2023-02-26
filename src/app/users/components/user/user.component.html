@@ -1,0 +1,28 @@
+<p-card
+  [header]="user?.name ?? 'Unknown'"
+  [subheader]="user?.address ?? 'Unknown'"
+  [style]="{ width: '360px' }"
+  styleClass="p-card-shadow p-3 mt-4"
+>
+  <ng-template pTemplate="header">
+    <img alt="Card" [src]="user?.avatar" />
+  </ng-template>
+  <a href="#"> {{ user?.email }} </a>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-between">
+      <p-button
+        label="Delete"
+        icon="pi pi-times"
+        styleClass="p-button-secondary"
+        [style]="{ width: '120px' }"
+        (onClick)="deleteUser()"
+      ></p-button>
+      <p-button
+        label="Edit"
+        icon="pi pi-check"
+        [style]="{ width: '120px' }"
+        (onClick)="editUser()"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-card>

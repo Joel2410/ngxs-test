@@ -1,0 +1,5 @@
+<div class="flex flex-wrap column-gap-4 row-gap-6 mb-4 pb-4">
+  <ng-container *ngFor="let user of users$ | async">
+    <app-user [user]="user"></app-user>
+  </ng-container>
+</div>

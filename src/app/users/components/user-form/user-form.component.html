@@ -1,0 +1,46 @@
+<div class="grid justify-content-center mt-6">
+  <p-card class="col lg:col-4 md:col-6 col-11">
+    <div class="flex justify-content-between">
+      <h2>{{ actionForm }} user</h2>
+      <a class="mt-4 cursor-pointer" (click)="onCancel()"
+        ><i class="pi pi-arrow-left" style="font-size: 1.2rem"> Back</i>
+      </a>
+    </div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="field mt-5">
+        <span class="p-float-label">
+          <input type="text" id="name" class="w-full" formControlName="name" pInputText />
+          <label for="name">Name</label>
+        </span>
+      </div>
+
+      <div class="field mt-5">
+        <span class="p-float-label">
+          <input type="text" id="address" class="w-full" formControlName="address" pInputText />
+          <label for="address">Address</label>
+        </span>
+      </div>
+
+      <div class="field mt-5">
+        <span class="p-float-label">
+          <input type="text" id="email" class="w-full" formControlName="email" pInputText />
+          <label for="email">Email</label>
+        </span>
+      </div>
+
+      <div class="field mt-5">
+        <span class="p-float-label">
+          <input type="text" id="avatar" class="w-full" formControlName="avatar" pInputText />
+          <label for="avatar">Avatar</label>
+        </span>
+      </div>
+
+      <div class="flex justify-content-between mt-4">
+        <button pButton type="submit" [disabled]="!userForm.valid">
+          {{ actionForm }}
+        </button>
+      </div>
+    </form>
+  </p-card>
+</div>

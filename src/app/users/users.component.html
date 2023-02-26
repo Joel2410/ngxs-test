@@ -1,0 +1,17 @@
+<div class="container mx-5">
+  <app-header></app-header>
+
+  <ng-container *ngIf="!(isEdit$ | async); else editing">
+    <ng-container *ngIf="!(loadingUsers$ | async); else loading">
+      <app-user-list></app-user-list>
+    </ng-container>
+
+    <ng-template #loading>
+      <h2>Cargando...</h2>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #editing>
+    <app-user-form></app-user-form>
+  </ng-template>
+</div>
